@@ -1,0 +1,330 @@
+/* Variáveis de cores */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+    --text-light: #f8f9fa;
+    --text-dark: #212529;
+}
+
+/* Estilos gerais */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.8rem 1rem;
+}
+
+.navbar-brand-custom {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--text-light) !important;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.user-greeting {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+}
+
+.user-greeting i {
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+}
+
+/* Seção de boas-vindas */
+.welcome-section {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.welcome-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-subtitle {
+    color: var(--primary-color);
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+/* Títulos de seção */
+.section-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Carrossel */
+/* ----- CARROSSEL CINEMÁTICO ----- */
+.carousel-custom {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transform: translateY(0);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    max-height: 200px;
+}
+
+.stom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Efeito Hollywood */
+.carousel-inner {
+    perspective: 200px;
+}
+
+.carousel-item {
+    transition: transform 1.2s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+
+/* Imagem com brilho cinematográfico */
+.carousel-img {
+    height: 300px !important; /* Altura fixa */
+    object-fit: cover; /* Preenche sem distorcer */
+    object-position: center; /* Foco no centro */
+    width: 100%; /* Largura total */
+}
+
+/* Legenda estilo Netflix */
+.carousel-caption {
+    background: linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.85) 0%, 
+        rgba(0, 0, 0, 0.5) 50%, 
+        transparent 100%
+    );
+    padding: 0.8rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: left;
+    backdrop-filter: blur(5px);
+    z-index: 2;
+}
+
+.carousel-caption h5 {
+    font-size: 1.1rem;
+    /*  font-weight: 800;*/
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.5rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.carousel-caption p {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    display: inline-block;
+    background: var(--accent-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+}
+
+/* Botões de navegação (estilo moderno) */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+     width: 5%;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+    margin: 0 15px;
+}
+
+/* Indicadores personalizados */
+.carousel-indicmarcas {
+    bottom: 5px;
+}
+
+.carousel-indicmarcas [data-bs-target] {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+    margin: 0 4px;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicmarcas .active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: scale(1.3);
+}
+
+/* ----- RESPONSIVIDADE ----- */
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 200px;
+        object-position: center;
+    }
+    
+    .carousel-caption {
+        padding: 1rem;
+    }
+    
+    .carousel-caption h5 {
+        font-size: 1.0rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Cards de filmes */
+.film-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.film-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.film-poster {
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.film-card:hover .film-poster {
+    transform: scale(1.03);
+}
+
+.film-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.film-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.film-actions {
+    background-color: white;
+    border-top: none;
+    padding: 1rem;
+}
+
+.btn-details {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* /* Ajuste do body para navbar fixed */
+body {
+    padding-top: 70px;
+}
+
+novo
+.navbar-nav > li > .dropdown-menu {
+    background-color: #333;
+    border: none;
+    border-radius: 0;
+}
+
+.navbar-nav > li > .dropdown-menu > li > a {
+    color: #9d9d9d;
+    padding: 10px 20px;
+}
+
+.navbar-nav > li > .dropdown-menu > li > a:hover {
+    background-color: #444;
+    color: white;
+}
+
+fim novo
+Estilo para o navbar
+.navbar-inverse {
+    background-color: #222;
+    border-color: #080808;
+}
+
+Ícones no menu
+.navbar-nav > li > a > i {
+    margin-right: 6px;
+}
+
+Dropdown estilizado
+.dropdown-menu {
+    background-color: #333;
+}
+.dropdown-menu > li > a {
+    color: #9d9d9d;
+    padding: 8px 20px;
+}
+.dropdown-menu > li > a > i {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+}
+.dropdown-menu > li > a:hover {
+    background-color: #444;
+    color: white;
+}
+
+Efeito hover nos itens do menu
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #333;
+}
